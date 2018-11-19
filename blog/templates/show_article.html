@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>{{ article_item.article_name }}</title>
+        <link rel="shortcut icon" href="{{ MEDIA_URL }}{{ article_item.page_icon }}">
+    </head>
+    <body>
+	<script src="{% static 'pdf/js/pdfobject.js' %}"></script>
+	<script>
+		PDFObject.embed("{{ MEDIA_URL }}{{ article_item.pdf_url }}");
+	</script>
+    </body>
+</html>
